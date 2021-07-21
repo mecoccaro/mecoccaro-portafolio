@@ -1,6 +1,7 @@
 import React from 'react';
 
-import Navbar from "./components/Navbar";
+import Navbar from './components/Navbar';
+import Intro from './components/Intro';
 
 class App extends React.Component{
 
@@ -8,6 +9,7 @@ class App extends React.Component{
         return (
             <main>
                 <Navbar />
+                <Intro />
             </main>
         );
     }
