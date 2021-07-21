@@ -1,63 +1,177 @@
-import React from 'react'
 import {
     AppBar,
     Toolbar,
     Typography,
+    makeStyles,
     Button,
-    useScrollTrigger,
-    Slide
+    IconButton,
+    Drawer,
+    Link,
+    MenuItem,
 } from "@material-ui/core";
+import MenuIcon from "@material-ui/icons/Menu";
+import React, { useState, useEffect } from "react";
 
-import { makeStyles } from '@material-ui/core/styles'
-import PropTypes from 'prop-types'
+const headersData = [
+    {
+        label: "About me",
+    },
+    {
+        label: "Skills",
+    },
+    {
+        label: "Works",
+    },
+    {
+        label: "Projects",
+    },
+];
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
+const useStyles = makeStyles(() => ({
+    header: {
+        backgroundColor: "#1d2430",
+        paddingRight: "79px",
+        paddingLeft: "118px",
+        "@media (max-width: 900px)": {
+            paddingLeft: 0,
+        },
+    },
+    logo: {
+        fontFamily: "Work Sans, sans-serif",
+        fontWeight: 600,
+        color: "#FFFEFE",
+        textAlign: "left",
     },
     menuButton: {
-        marginRight: theme.spacing(2),
+        fontFamily: "Open Sans, sans-serif",
+        fontWeight: 700,
+        size: "18px",
+        marginLeft: "38px",
     },
-    title: {
-        flexGrow: 1,
+    toolbar: {
+        display: "flex",
+        justifyContent: "space-between",
     },
-    navbar: {
-        backgroundColor: '#1d2430',
+    drawerContainer: {
+        padding: "20px 30px",
     },
 }));
 
+export default function Navbar() {
+    const {header, logo, menuButton, toolbar, drawerContainer} = useStyles();
 
-function HideOnScroll(props) {
-    const { children, window } = props;
-    const trigger = useScrollTrigger({ target: window ? window() : undefined });
+    const [state, setState] = useState({
+        mobileView: false,
+        drawerOpen: false,
+    });
 
-    return (
-        <Slide appear={false} direction="down" in={!trigger}>
-            {children}
-        </Slide>
-    );
-}
+    const {mobileView, drawerOpen} = state;
 
-HideOnScroll.propTypes = {
-    children: PropTypes.element.isRequired,
-    window: PropTypes.func,
-};
+    useEffect(() => {
+        const setResponsiveness = () => {
+            return window.innerWidth < 900
+                ? setState((prevState) => ({...prevState, mobileView: true}))
+                : setState((prevState) => ({...prevState, mobileView: false}));
+        };
 
-const Navbar = (props) => {
-    const classes = useStyles();
+        setResponsiveness();
 
-    return (
-        <AppBar position="static" className={classes.navbar}>
-            <Toolbar>
-                <Typography variant="h6" className={classes.title}>
-                    Miguel E. Coccaro M.
-                </Typography>
-                <Button color="inherit">About Me</Button>
-                <Button color="inherit">Skills</Button>
-                <Button color="inherit">Works</Button>
-                <Button color="inherit">Projects</Button>
+        window.addEventListener("resize", () => setResponsiveness());
+
+        return () => {
+            window.removeEventListener("resize", () => setResponsiveness());
+        };
+    }, []);
+
+    const displayDesktop = () => {
+        return (
+            <Toolbar className={toolbar}>
+                {mecoccarologo}
+                <div>{getMenuButtons()}</div>
             </Toolbar>
-        </AppBar>
+        );
+    };
+
+    const displayMobile = () => {
+        const handleDrawerOpen = () =>
+            setState((prevState) => ({...prevState, drawerOpen: true}));
+        const handleDrawerClose = () =>
+            setState((prevState) => ({...prevState, drawerOpen: false}));
+
+        return (
+            <Toolbar>
+                <IconButton
+                    {...{
+                        edge: "start",
+                        color: "inherit",
+                        "aria-label": "menu",
+                        "aria-haspopup": "true",
+                        onClick: handleDrawerOpen,
+                    }}
+                >
+                    <MenuIcon/>
+                </IconButton>
+
+                <Drawer
+                    {...{
+                        anchor: "left",
+                        open: drawerOpen,
+                        onClose: handleDrawerClose,
+                    }}
+                >
+                    <div className={drawerContainer}>{getDrawerChoices()}</div>
+                </Drawer>
+
+                <div>{mecoccarologo}</div>
+            </Toolbar>
+        );
+    };
+
+    const getDrawerChoices = () => {
+        return headersData.map(({label, href}) => {
+            return (
+                <Link
+                    {...{
+                        to: href,
+                        color: "inherit",
+                        style: {textDecoration: "none"},
+                        key: label,
+                    }}
+                >
+                    <MenuItem>{label}</MenuItem>
+                </Link>
+            );
+        });
+    };
+
+    const mecoccarologo = (
+        <Typography variant="h6" component="h1" className={logo}>
+            Miguel E. Coccaro M.
+        </Typography>
+    );
+
+    const getMenuButtons = () => {
+        return headersData.map(({label, href}) => {
+            return (
+                <Button
+                    {...{
+                        key: label,
+                        color: "inherit",
+                        to: href,
+                        className: menuButton,
+                    }}
+                >
+                    {label}
+                </Button>
+            );
+        });
+    };
+
+    return (
+        <header>
+            <AppBar className={header}>
+                {mobileView ? displayMobile() : displayDesktop()}
+            </AppBar>
+        </header>
     );
 }
-export default Navbar
