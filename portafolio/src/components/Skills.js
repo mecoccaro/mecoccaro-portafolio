@@ -215,6 +215,13 @@ const Skills = () => {
                         { cardsBackEnd() }
                     </Box>
                 </Grid>
+
+                <Grid item xs={12} alignSelf="center" className={classes.top_cards}>
+                    <Box >
+                        { cardsDBs() }
+                    </Box>
+                </Grid>
+
                 <Grid item xs={12} className={classes.top_cards}>
                     <Box>
                         { cardsFrontEnd() }
