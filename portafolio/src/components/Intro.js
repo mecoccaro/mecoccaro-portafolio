@@ -1,6 +1,7 @@
 import {
     Box,
-    Grid, Icon, Slide,
+    Grid,
+    Slide,
     Typography,
 } from '@material-ui/core';
 import React, {useEffect} from 'react';
