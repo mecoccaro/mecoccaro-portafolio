@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Intro from './components/Intro';
 import Skills from "./components/Skills";
+import About from "./components/About";
 
 class App extends React.Component{
 
@@ -11,6 +12,7 @@ class App extends React.Component{
             <main>
                 <Navbar />
                 <Intro />
+                <About />
                 <Skills />
             </main>
         );
