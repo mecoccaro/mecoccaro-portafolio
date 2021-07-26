@@ -10,6 +10,7 @@ import {
     withStyles,
     makeStyles
 } from '@material-ui/core';
+import { AnimationOnScroll } from 'react-animation-on-scroll'
 
 const useStyles = makeStyles({
     left_cards: {
@@ -244,7 +245,7 @@ const Skills = () => {
 
     const displayDesktop = () => {
         return (
-            <Slide direction="up" in={checked}>
+            <AnimationOnScroll animateIn="animate__backInLeft" animateOnce={true}>
                 <Grid container alignItems="center" direction="row">
                     <Grid item md={6} alignSelf="center" className={classes.left_cards}>
                         <Box>
@@ -267,7 +268,7 @@ const Skills = () => {
                         </Box>
                     </Grid>
                 </Grid>
-            </Slide>
+            </AnimationOnScroll>
 
         )
     }
@@ -275,11 +276,11 @@ const Skills = () => {
     return (
         <>
             <Grid>
-                <Slide in={checked} direction='up'>
+                <AnimationOnScroll animateIn="animate__backInLeft" animateOnce={true}>
                     <Typography align="center" variant='h2' component='h2' gutterBottom className={classes.text}>
                         Skills
                     </Typography>
-                </Slide>
+                </AnimationOnScroll>
             </Grid>
             {mobileView ? displayMobile() : displayDesktop()}
         </>

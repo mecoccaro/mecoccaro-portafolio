@@ -4,8 +4,8 @@ import {
     Slide,
     Typography
 } from '@material-ui/core';
-import React, {useEffect} from "react";
-
+import React, {useEffect} from 'react';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 const useStyles = makeStyles((theme) => ({
     text: {
@@ -30,7 +30,7 @@ const About = () => {
     };
 
     return (
-        <Slide direction='up' in={loaded}>
+        <AnimationOnScroll animateIn="animate__backInLeft" initiallyVisible={false} animateOnce={true}>
             <Grid className={classes.about}>
                 <Typography align="center" variant='h2' component='h2' gutterBottom className={classes.text}>
                     About Me
@@ -43,7 +43,7 @@ const About = () => {
                     experience working with agile methodologies and the ability for the development of creative solutions.
                 </Typography>
             </Grid>
-        </Slide>
+        </AnimationOnScroll>
     )
 
 }
