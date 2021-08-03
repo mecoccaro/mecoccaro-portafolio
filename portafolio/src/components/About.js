@@ -19,16 +19,6 @@ const useStyles = makeStyles((theme) => ({
 const About = () => {
     const classes = useStyles();
 
-    const [loaded, setLoaded] = React.useState(false);
-
-    useEffect(() => {
-        handleChange()
-    }, [])
-
-    const handleChange = () => {
-        setLoaded((prev) => !prev);
-    };
-
     return (
         <AnimationOnScroll animateIn="animate__backInLeft" initiallyVisible={false} animateOnce={true}>
             <Grid className={classes.about}>
