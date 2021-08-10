@@ -245,7 +245,7 @@ const Skills = () => {
 
     const displayDesktop = () => {
         return (
-            <AnimationOnScroll animateIn="animate__backInLeft" animateOnce={true}>
+            <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
                 <Grid container alignItems="center" direction="row">
                     <Grid item md={6} alignSelf="center" className={classes.left_cards}>
                         <Box>
@@ -276,7 +276,7 @@ const Skills = () => {
     return (
         <>
             <Grid>
-                <AnimationOnScroll animateIn="animate__backInLeft" animateOnce={true}>
+                <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
                     <Typography align="center" variant='h2' component='h2' gutterBottom className={classes.text}>
                         Skills
                     </Typography>

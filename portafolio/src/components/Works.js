@@ -5,7 +5,7 @@ import {
     Tab,
     Tabs,
     Typography,
-    Box, Grid, Button, Avatar
+    Box, Grid, Button, Avatar, Link
 } from '@material-ui/core'
 import {AnimationOnScroll} from 'react-animation-on-scroll'
 
@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
     },
     tabGrid: {
         paddingTop: 90
+    },
+    link: {
+        color: "#084780"
     }
 }));
 
@@ -127,11 +130,28 @@ const Works = () => {
                         />
                     </Tabs>
                     <TabPanel value={value} index={0}>
-                        Item One
+                        <Typography variant='h5'>
+                            <Link href='https://www.setlife.network/' className={classes.link}> SetLife Network's </Link> - Software Engineer
+                        </Typography>
+                        <Typography variant='subtitle2'>
+                            Remote / May 2021 - Present
+                        </Typography>
+                        Development of the Trinary web portal, which serves as a budgeting tool for tracking
+                        <br/>
+                        workflows and cashflows across different projects and contributors.
+                        <br/>
+                        Making integrations with payment gateways such as Stripe and backend development of different
+                        <br/>
+                        functionalities of the portal as well as different visual adjustments in the frontend, offering
+                        <br/>
+                        different solutions to improve the quality of the product.
                     </TabPanel>
                     <TabPanel value={value} index={1}>
                         <Typography variant='h5'>
-                            Banco Fondo Común - Intern
+                            <Link href='https://www.bfc.com.ve/' className={classes.link}>Banco Fondo Común</Link> - Intern
+                        </Typography>
+                        <Typography variant='subtitle2'>
+                            Caracas, VE / Sep 2020 - Nov 2020
                         </Typography>
                         Developed a reengineering of the services of payment and recharge of Digitel and Inter
                         <br/>
@@ -149,6 +169,9 @@ const Works = () => {
                         <Typography variant='h5'>
                             Impress Job - Front End Developer
                         </Typography>
+                        <Typography variant='subtitle2'>
+                            Caracas, VE / Mar 2016 - Sep 2016
+                        </Typography>
                         Developed the user interface to check the profile and status of the actual applications.
                         <br/>
                         This also included  changes to the original views focused on facilitating navigation
@@ -162,16 +185,13 @@ const Works = () => {
                         companies.
                     </TabPanel>
                     <TabPanel value={value} index={3}>
-                        Item Four
-                    </TabPanel>
-                    <TabPanel value={value} index={4}>
-                        Item Five
-                    </TabPanel>
-                    <TabPanel value={value} index={5}>
-                        Item Six
-                    </TabPanel>
-                    <TabPanel value={value} index={6}>
-                        Item Seven
+                        <Typography variant='h5'>
+                            <Link href='https://www.ucab.edu.ve/' className={classes.link}>Universidad Católica Andrés Bello</Link> - Software Engineering
+                        </Typography>
+                        <Typography variant='subtitle2'>
+                            Caracas, VE / Student / Oct 2015 - Feb 2021
+                        </Typography>
+
                     </TabPanel>
                 </Grid>
             </Grid>
