@@ -6,7 +6,6 @@ import {
     Typography,
     Card,
     LinearProgress,
-    Slide,
     withStyles,
     makeStyles
 } from '@material-ui/core';

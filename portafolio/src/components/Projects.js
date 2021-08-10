@@ -5,10 +5,7 @@ import {
     CardContent,
     Typography,
     Card,
-    LinearProgress,
-    Slide,
-    withStyles,
-    makeStyles, CardActions, Button, CardMedia, CardActionArea
+    makeStyles, CardMedia, CardActionArea
 } from '@material-ui/core';
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 

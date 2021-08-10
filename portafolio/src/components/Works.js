@@ -5,7 +5,7 @@ import {
     Tab,
     Tabs,
     Typography,
-    Box, Grid, Button, Avatar, Link
+    Box, Grid, Link
 } from '@material-ui/core'
 import {AnimationOnScroll} from 'react-animation-on-scroll'
 
@@ -95,6 +95,7 @@ const Works = () => {
                                     width="40%"
                                     height="auto"
                                     src={process.env.PUBLIC_URL + "/setlifenetwork.png"}
+                                    alt='Setlife Network'
                                 />
                             }
                         />
@@ -105,6 +106,7 @@ const Works = () => {
                                     width="40%"
                                     height="auto"
                                     src={process.env.PUBLIC_URL + "/bfc.png"}
+                                    alt='Banco Fondo Común'
                                 />
                             }
                         />
@@ -115,6 +117,7 @@ const Works = () => {
                                     width="40%"
                                     height="auto"
                                     src={process.env.PUBLIC_URL + "/impressjob.jpg"}
+                                    alt='Impress Job'
                                 />
                             }
                         />
@@ -125,6 +128,7 @@ const Works = () => {
                                     width="50%"
                                     height="auto"
                                     src={process.env.PUBLIC_URL + "/Logo_UCAB_1.png"}
+                                    alt='Universidad Católica Andrés Bello'
                                 />
                             }
                         />

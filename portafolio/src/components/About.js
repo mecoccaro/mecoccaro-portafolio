@@ -1,10 +1,9 @@
 import {
     Grid,
     makeStyles,
-    Slide,
     Typography
 } from '@material-ui/core';
-import React, {useEffect} from 'react';
+import React from 'react';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 const useStyles = makeStyles((theme) => ({
