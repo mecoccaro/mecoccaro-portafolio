@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: theme.palette.background.paper,
         display: 'flex',
-        height: 300,
+        height: 'auto',
         paddingTop: 20
     },
     text: {
@@ -191,7 +191,6 @@ const Works = () => {
                         <Typography variant='subtitle2'>
                             Caracas, VE / Student / Oct 2015 - Feb 2021
                         </Typography>
-
                     </TabPanel>
                 </Grid>
             </Grid>
