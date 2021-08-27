@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
     },
     text: {
         color: "white"
+    },
+    photo: {
+        paddingLeft: 250
     }
 }));
 
@@ -35,8 +38,13 @@ const Intro = (props) => {
     return (
         <Grid container className={classes.intro}>
             <Grid item xs md={6}>
-                <Box>
-                    Foto
+                <Box className={classes.photo}>
+                    <img
+                        width="50%"
+                        height="auto"
+                        src={process.env.PUBLIC_URL + "/me-crop.png"}
+                        alt='Miguel Coccaro'
+                    />
                 </Box>
             </Grid>
             <Grid item xs md={6}>

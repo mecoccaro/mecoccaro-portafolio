@@ -17,7 +17,8 @@ const useStyles = makeStyles({
     root: {
         maxWidth: 345,
         marginLeft: 50,
-        marginTop: 15
+        marginTop: 15,
+        height: 350
     },
     media: {
         height: 140,
@@ -65,7 +66,8 @@ const Projects = () => {
         return (
             <Box>
                 <Card className={classes.root} variant="outlined">
-                    <CardActionArea href='https://github.com/mecoccaro/mecoccaro-portafolio'>
+                    <CardActionArea href='https://github.com/mecoccaro/mecoccaro-portafolio' target="_blank"
+                                    rel="noopener noreferrer">
                         <CardMedia
                             className={classes.media}
                             image={process.env.PUBLIC_URL + "/GitHub-Logo.png"}
@@ -90,7 +92,8 @@ const Projects = () => {
         return (
             <Box>
                 <Card className={classes.root} variant="outlined">
-                    <CardActionArea href='https://github.com/mecoccaro/mecoccaro-portafolio'>
+                    <CardActionArea href='https://github.com/mecoccaro/ucabpoints' target="_blank"
+                                    rel="noopener noreferrer">
                         <CardMedia
                             className={classes.media}
                             image={process.env.PUBLIC_URL + "/GitHub-Logo.png"}
@@ -98,11 +101,12 @@ const Projects = () => {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="h2">
-                                Portfolio
+                                Ucabpoints
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                This is the code of this portfolio! I made it with ReactJS using material-ui library
-                                for the components.
+                                Developed a Program for customer loyalty to the platform  using points acquired using the Stripe payment processor that included
+                                the platform's administration module, account and user blocking, service commission administration and
+                                sent automated emails.
                             </Typography>
                         </CardContent>
                     </CardActionArea>
@@ -115,7 +119,8 @@ const Projects = () => {
         return (
             <Box>
                 <Card className={classes.root} variant="outlined">
-                    <CardActionArea href='https://github.com/mecoccaro/mecoccaro-portafolio'>
+                    <CardActionArea href='https://github.com/mecoccaro/Gansa/tree/develop' target="_blank"
+                                    rel="noopener noreferrer">
                         <CardMedia
                             className={classes.media}
                             image={process.env.PUBLIC_URL + "/GitHub-Logo.png"}
@@ -123,11 +128,12 @@ const Projects = () => {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="h2">
-                                Portfolio
+                                Gansa - Football pools
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                This is the code of this portfolio! I made it with ReactJS using material-ui library
-                                for the components.
+                                This is an ongoing project for football pools, where you can join differents pools with your own predictions
+                                and you can monitor the results. It also has a side for the administrator of the pools, where you can enter
+                                results and manipulate users.
                             </Typography>
                         </CardContent>
                     </CardActionArea>
