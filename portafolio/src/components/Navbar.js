@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
+import { scroller } from 'react-scroll';
 
 const headersData = [
     {
@@ -109,7 +110,7 @@ export default function Navbar() {
                         onClick: handleDrawerOpen,
                     }}
                 >
-                    <MenuIcon/>
+                    <MenuIcon />
                 </IconButton>
 
                 <Drawer
@@ -119,7 +120,7 @@ export default function Navbar() {
                         onClose: handleDrawerClose,
                     }}
                 >
-                    <div className={drawerContainer}>{getDrawerChoices()}</div>
+                    <div className={drawerContainer} onClick={handleDrawerClose}>{getDrawerChoices()}</div>
                 </Drawer>
 
                 <div>{mecoccarologo}</div>
@@ -131,6 +132,7 @@ export default function Navbar() {
         return headersData.map(({label, href}) => {
             return (
                 <Link
+                    onClick={event => onClick(label)}
                     {...{
                         to: href,
                         color: "inherit",
@@ -150,10 +152,22 @@ export default function Navbar() {
         </Typography>
     );
 
+    const scrollType = {
+        duration: 500,
+        delay: 50,
+        smooth: true,
+        offset: -50,
+    };
+
+    const onClick = (tabName) => {
+        scroller.scrollTo((tabName).toString(), scrollType)
+    }
+
     const getMenuButtons = () => {
         return headersData.map(({label, href}) => {
             return (
                 <Button
+                    onClick={event => onClick(label)}
                     {...{
                         key: label,
                         color: "inherit",
