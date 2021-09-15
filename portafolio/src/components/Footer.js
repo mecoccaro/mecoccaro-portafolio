@@ -2,19 +2,16 @@ import {
     Toolbar,
     Typography,
     makeStyles,
-    Grid,
+    Grid, Button, Box, CardActionArea,
 } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
+import { Twitter, LinkedIn, GitHub, Email } from '@material-ui/icons';
 
 const useStyles = makeStyles(() => ({
     header: {
         backgroundColor: "#1d2430",
-        paddingRight: "79px",
-        paddingLeft: "118px",
         marginTop: 90,
-        "@media (max-width: 900px)": {
-            paddingLeft: 0,
-        },
+        textAlign: "center",
     },
     logo: {
         fontFamily: "Work Sans, sans-serif",
@@ -22,73 +19,47 @@ const useStyles = makeStyles(() => ({
         color: "#FFFEFE",
         textAlign: "center",
     },
-    toolbar: {
-        display: "flex",
-        justifyContent: "space-between",
-        alignContent: "center"
-    },
     text: {
         color: "white",
     },
-    footerMobile: {
-        padding: 20
+    icons: {
+        color: "white",
+        fontSize: 40,
+        margin: 20,
     }
 }));
 
 export default function Navbar() {
-    const {header, toolbar, text, footerMobile} = useStyles();
-
-    const [state, setState] = useState({
-        mobileView: false,
-        drawerOpen: false,
-    });
-
-    const {mobileView, drawerOpen} = state;
-
-    useEffect(() => {
-        const setResponsiveness = () => {
-            return window.innerWidth < 900
-                ? setState((prevState) => ({...prevState, mobileView: true}))
-                : setState((prevState) => ({...prevState, mobileView: false}));
-        };
-
-        setResponsiveness();
-
-        window.addEventListener("resize", () => setResponsiveness());
-
-        return () => {
-            window.removeEventListener("resize", () => setResponsiveness());
-        };
-    }, []);
-
-    const displayDesktop = () => {
-        return (
-            <Toolbar className={toolbar}>
-                {mecoccarologo}
-            </Toolbar>
-        );
-    };
-
-    const displayMobile = () => {
-
-        return (
-            <Grid className={footerMobile}>
-                <div>{mecoccarologo}</div>
-            </Grid>
-        );
-    };
+    const {header, text, icons} = useStyles();
 
     const mecoccarologo = (
-        <Typography className={text}>
-            © Miguel E. Coccaro M. 2021
-        </Typography>
+        <Grid className={text}>
+            © Miguel E. Coccaro M. - 2021
+        </Grid>
     );
 
     return (
-        <header>
-            <Grid className={header}>
-                {mobileView ? displayMobile() : displayDesktop()}
-            </Grid>
-        </header>
+        <Grid className={header}>
+            <Button href='https://github.com/mecoccaro' target="_blank"
+                    rel="noopener noreferrer">
+                <GitHub className={icons} />
+            </Button>
+            <Button href='https://twitter.com/MEcoccaro' target="_blank"
+                    rel="noopener noreferrer">
+                <Twitter className={icons} />
+            </Button>
+            <Button href='https://linkedin.com/in/miguel-coccaro-montserrat-383a511a3' target="_blank"
+                    rel="noopener noreferrer">
+                <LinkedIn className={icons} />
+            </Button>
+            <Button href='mailto:miguele.coccaro@gmail.com' target="_blank"
+                    rel="noopener noreferrer">
+                <Email className={icons} />
+            </Button>
+            {mecoccarologo}
+            <Typography variant={"caption"} className={text}>
+                Caracas, Venezuela
+            </Typography>
+        </Grid>
     );
 }

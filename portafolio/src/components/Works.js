@@ -195,6 +195,15 @@ const Works = () => {
                         <Typography variant='subtitle2'>
                             Caracas, VE / Student / Oct 2015 - Feb 2021
                         </Typography>
+                        The Software Engineer from the Andrés Bello Catholic University is an entrepreneurial
+                        <br/>
+                        professional with comprehensive training that provides effective solutions to problems
+                        <br/>
+                        related to the design, production and implementation of application software and telematic
+                        <br/>
+                        systems; manages and maintains operating systems and computer equipment; plans, directs and
+                        <br/>
+                        controls IT projects, relying on decision-making tools.
                     </TabPanel>
                 </Grid>
             </Grid>

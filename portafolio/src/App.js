@@ -16,7 +16,9 @@ class App extends React.Component{
         return (
             <main>
                 <Navbar />
-                <Intro />
+                <Element name='Intro'>
+                    <Intro />
+                </Element>
                 <Element name='About me'>
                     <About />
                 </Element>

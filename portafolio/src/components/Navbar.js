@@ -49,6 +49,11 @@ const useStyles = makeStyles(() => ({
         size: "18px",
         marginLeft: "38px",
     },
+    titleButton: {
+        fontFamily: "Work Sans, sans-serif",
+        fontWeight: 700,
+        size: "18px",
+    },
     toolbar: {
         display: "flex",
         justifyContent: "space-between",
@@ -59,7 +64,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default function Navbar() {
-    const {header, logo, menuButton, toolbar, drawerContainer} = useStyles();
+    const {header, logo, menuButton, toolbar, drawerContainer, titleButton} = useStyles();
 
     const [state, setState] = useState({
         mobileView: false,
@@ -87,7 +92,9 @@ export default function Navbar() {
     const displayDesktop = () => {
         return (
             <Toolbar className={toolbar}>
-                {mecoccarologo}
+                <Button className={titleButton} onClick={event => onClick('Intro')}>
+                    {mecoccarologo}
+                </Button>
                 <div>{getMenuButtons()}</div>
             </Toolbar>
         );
@@ -123,7 +130,11 @@ export default function Navbar() {
                     <div className={drawerContainer} onClick={handleDrawerClose}>{getDrawerChoices()}</div>
                 </Drawer>
 
-                <div>{mecoccarologo}</div>
+                <div>
+                    <Button className={titleButton} onClick={event => onClick('Intro')}>
+                    {mecoccarologo}
+                    </Button>
+                </div>
             </Toolbar>
         );
     };
