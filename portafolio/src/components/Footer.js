@@ -34,7 +34,7 @@ export default function Navbar() {
 
     const mecoccarologo = (
         <Grid className={text}>
-            © Miguel E. Coccaro M. - 2021
+            © Miguel E. Coccaro M. - 2025
         </Grid>
     );
 
@@ -44,7 +44,7 @@ export default function Navbar() {
                     rel="noopener noreferrer">
                 <GitHub className={icons} />
             </Button>
-            <Button href='https://twitter.com/MEcoccaro' target="_blank"
+            <Button href='https://x.com/MEcoccaro' target="_blank"
                     rel="noopener noreferrer">
                 <Twitter className={icons} />
             </Button>

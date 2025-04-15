@@ -31,13 +31,15 @@ const About = () => {
                     About Me
                 </Typography>
                 <Typography className={classes.textAbout} variant='subtitle1'>
-                    Hi! I'm a student  of  10th  semester  in  Software  Engineering,  with  high  interest in  back-end
+                    Hi! I'm a Software Engineer with a strong focus on back-end development, database management
                     <br/>
-                    development, database  management  and  cloud computing. Advanced knowledge in different
+                    and cloud computing. I have extensive experience using modern web development technologies,
                     <br/>
-                    programming languages, mainly in Python, experience working with agile methodologies
+                    advanced knowledge of various programming languages, and a proven track record of managing and
                     <br/>
-                    and the ability for the development of creative solutions.
+                    leading small teams of developers. Skilled in agile methodologies and dedicated to delivering
+                    <br/>
+                    efficient and innovative solutions.
                 </Typography>
             </Grid>
         </AnimationOnScroll>

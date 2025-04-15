@@ -74,11 +74,9 @@ const Intro = (props) => {
                                 Software Developer
                             </Typography>
                             <Typography variant='subtitle1' gutterBottom className={classes.text}>
-                                I'm a student of Software Engineering, with interest in back-end development,
+                                I'm a Software Engineer, with a strong focus on back-end development,
                                 <br/>
-                                data base management and cloud computing. Currently working on my thesis of
-                                <br/>
-                                a system based on Business Intelligence and a centralized repository.
+                                data base management and cloud computing.
                             </Typography>
                         </Box>
                     </Slide>

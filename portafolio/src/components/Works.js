@@ -132,6 +132,28 @@ const Works = () => {
                                 />
                             }
                         />
+                        <Tab
+                            {...a11yProps(4)}
+                            icon={
+                                <img
+                                    width="40%"
+                                    height="auto"
+                                    src={process.env.PUBLIC_URL + "/crabi_logo.png"}
+                                    alt='Crabi'
+                                />
+                            }
+                        />
+                        <Tab
+                            {...a11yProps(5)}
+                            icon={
+                                <img
+                                    width="40%"
+                                    height="auto"
+                                    src={process.env.PUBLIC_URL + "/compass_mining_logo.jpg"}
+                                    alt='Compass Mining'
+                                />
+                            }
+                        />
                     </Tabs>
                     <TabPanel value={value} index={0}>
                         <Typography variant='h5'>
@@ -204,6 +226,24 @@ const Works = () => {
                         systems; manages and maintains operating systems and computer equipment; plans, directs and
                         <br/>
                         controls IT projects, relying on decision-making tools.
+                    </TabPanel>
+                    <TabPanel value={value} index={4}>
+                        <Typography variant='h5'>
+                            <Link href='https://www.crabi.com/' className={classes.link}>Crabi</Link> - Software Engineer
+                        </Typography>
+                        <Typography variant='subtitle2'>
+                            Remote / Dec 2021 - Present
+                        </Typography>
+                        Working extensively primarily as a backend and software engineer, developing new tools for internal use within the company, such as vehicle detection tools using artificial intelligence models, migrating accounting services with in-house technology tailored to the business, and installing and developing microservices in different languages ​​and technologies, such as serverless. Managing databases for new services and optimizing SQL queries for them.
+                    </TabPanel>
+                    <TabPanel value={value} index={5}>
+                        <Typography variant='h5'>
+                            <Link href='https://www.compassmining.com/' className={classes.link}>Compass Mining</Link> - Backend Developer
+                        </Typography>
+                        <Typography variant='subtitle2'>
+                            Remote / Sep 2024 - Present
+                        </Typography>
+                        Backend developer, maintaining the core backend structure through the use of GraphQL with relational databases in PostgreSQL. I create new services, endpoints, and queries necessary for the proper functioning of the company's internal tools. I work with agile methodologies.
                     </TabPanel>
                 </Grid>
             </Grid>
